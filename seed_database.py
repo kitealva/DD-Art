@@ -22,7 +22,7 @@ for art in art_data:
         art['price'],
     )
     
-    db_art = crud.create_item(art_name, image_path, description, price)
+    db_art = crud.create_art(art_name, image_path, description, price)
     art_in_db.append(db_art)
 
 model.db.session.add_all(art_in_db)

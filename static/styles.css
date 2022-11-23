@@ -1,0 +1,11 @@
+ * {
+    background-color: rgb(220, 131, 131);
+    font-family: 'Roboto', sans-serif;
+    border: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+}

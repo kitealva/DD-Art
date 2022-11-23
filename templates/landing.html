@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %} {% block title %}Landing{% endblock %} 
+<p>hello</p>
+
+{% block body %}
+<div>
+  <div class="page-header">
+  <p>Art Gallery</p>
+  </div>
+    <ul class="row">
+      {% for art in all_art %}
+      <li>
+        <a href="/landing/{{ art.art_id }}">
+            <img class="images" src="{{ art.image_path }}">
+            <div class="contents">
+           <div class="art-name2"> {{ art.art_name }} </div> {{ art.price }}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p>hqwerqwerqwer</p>
+  </div>
+  {% endblock %}

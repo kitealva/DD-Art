@@ -27,7 +27,7 @@ class Art(db.Model):
     art_name = db.Column(db.String)
     description = db.Column(db.Text)
     price = db.Column(db.String)
-    image = db.Column(db.String)
+    image_path = db.Column(db.String)
     
     def __repr__(self):
         return f'Art art_id={self.art_id} art_name{self.art_name}>'
