@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>{%block title%}{% endblock %}</title>
+</head>
+<body>
+    {% block head%}
+    <div class="nav">
+        <ul>
+            <li class="nav1"><a href="/landing">Home</a></li>
+            <li class="nav1"><a href="/art">Collection</a></li>
+            <li class="nav1"><a href="/login">Login</a></li>
+            <li class="nav1"><a href="/cart">Cart</a></li>
+            <li class="nav1"><a href="/wishlist">Wishlist</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+</body>
+</html>

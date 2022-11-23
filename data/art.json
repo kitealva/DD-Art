@@ -1,0 +1,60 @@
+[
+    {
+        "art_name": "Abstraction",
+        "image_path": "static/images/deven-beauty.jpg",
+        "description": "test1",
+        "price": "$79.99"
+    },
+
+    {
+        "art_name": "Gorrhino",
+        "image_path": "static/images/deven-blue-red.jpg",
+        "description": "test2",
+        "price": "$49.99"
+    },
+
+    {
+        "art_name": "Beauty",
+        "image_path": "static/images/deven-create.jpg",
+        "description": "test3",
+        "price": "$50.99"
+    },
+    
+    {
+        "art_name": "G.O.A.T",
+        "image_path": "static/images/deven-goat.jpg",
+        "description": "test4",
+        "price": "$99.99"
+    },
+
+    {
+        "art_name": "King",
+        "image_path": "static/images/deven-gorilla.jpg",
+        "description": "test5",
+        "price": "$19.99"
+    },
+
+    {
+        "art_name": "Journey's Beginning",
+        "image_path": "static/images/deven-lady.jpg",
+        "description": "test5",
+        "price": "$109.99"
+    },
+
+    {
+        "art_name": "The Sister",
+        "image_path": "static/images/deven-sister.jpg",
+        "description": "test6",
+        "price": "$89.99"
+    },
+
+    {
+        "art_name": "Venom",
+        "image_path": "static/images/deven-venom.jpg",
+        "description": "test7",
+        "price": "$119.99"
+    }
+
+
+    
+]
