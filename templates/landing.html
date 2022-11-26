@@ -1,11 +1,10 @@
-
 {% extends 'base.html' %} {% block title %}Landing{% endblock %} 
 <p>hello</p>
 
 {% block body %}
 <div>
   <div class="page-header">
-  <p>Art Gallery</p>
+  <h1>Art Gallery</h1>
   </div>
     <ul class="row">
       {% for art in all_art %}
@@ -19,6 +18,5 @@
       </li>
       {% endfor %}
     </ul>
-    <p>hqwerqwerqwer</p>
   </div>
   {% endblock %}
