@@ -1,13 +1,44 @@
-{% extends 'base.html' %}{% block title %}Homepage{% endblock %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}{% block title %}{{ art.art_name }} Art info{% endblock %}
+
+{% block body %}
+<div class="all_details">
+<div class="art-name">
+  <h1>{{ art.art_name }}</h1>
+</div>
+<img class="img" src="{{ art.image_path }}">
+
+<div class="price">
+  {{ art.price }}
+</div>
+
+<div class="description">
+<div class="details-part"><p> Art description : <br></div>
+  <div class="art-description"> {{ art.description }} </div>
+</p>
+</div>
+
+{% if session.get('user_email') %}
+
+<div class="quantity">
+<form action="/art/{{ art.art_id }}/carts" method="POST">
+  <div class="quant-form">
+  <p>
+    Qty* <br>
+    <select name="quantity" class="amount-field">
+      <option value=""></option>
+      {% for num in range(1,11) %}
+      <option value="{{ num }}">{{ num }}</option>
+      {% endfor %}
+    </select>
+  </p>
+</div>
+  <p><input class="submit" type="Submit" value="Add to Cart"  /></p>
+</form>
+</div>
+
+</div>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% block title %}Homepage{% endblock %}
+
+{% block body %}
+<div class="field1">
+  <h2>Create an Account</h2>
+<div class="border">
+
+  
+  <div class="allfields">
+
+      <form class="form1" action="/users" method="POST">
+        <p class="email">
+          Email address </br>
+          <input class="texts" type="text" name="email" placeholder="">
+        </p>
+        
+        <p class="password">
+          Create Password <input class="texts" type="password" name="password" placeholder="">
+        </p>
+        <p>
+          <button type="submit" placeholder="" class="sub" id="sub1">Sign Up</button>
+        </p>
+      </form>
+    </div>
+  {% endblock %}

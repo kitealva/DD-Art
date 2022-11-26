@@ -1,22 +1,35 @@
  * {
-    background-color: rgb(63, 61, 61);
     font-family: 'Caveat', cursive;
     border: border-box;
     margin: 0;
     padding: 0;
+
+}
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-image: url(../static/images/hand.jpg);
+}  
+body::-webkit-scrollbar {
+    display: none;
+}
+
+li a {
+    text-decoration: none;
 }
 
 .navbar ul{
     overflow: auto;
     background-color: black;
 }
+
 .navbar li{
     float:right;
     list-style: none; 
-    margin: 16px 42px;
-    
-    
+    margin: 12px 36px;    
 }
+
 .navbar li a{
     padding: 3px 3px;
     text-decoration: none;
@@ -24,8 +37,9 @@
     font-size: 23px;
     background-color: rgb(255, 0, 0);
 }
+
 .navbar li a:hover{
-    color: red
+    color: rgb(112, 218, 18)
 }
 
 .images {
@@ -35,32 +49,31 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    object-fit: cover;
-    padding-left: 60px;
+    padding: 1.2vw;
+    border-radius: 9%;
     
 }
+
 .row {
-    text-decoration: none;
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 7%;
+    margin-top: 2%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .contents {
     flex-direction: column;
-    font-size: 20px;
-    color: #399DFA;
-    text-decoration: none;
-    transition: ease-out .25s;
+    font-size: 30px;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-bottom: 50%;
-    padding-left: 20%;
+    text-align: center;
+    padding-bottom: 13%;
 }
 
 h1 {
@@ -68,5 +81,125 @@ h1 {
     font-weight: bold;
     color: #ffffff;
     margin-top: 2%;
-    font-size: 40px;
+    font-size: 50px;
+}
+
+.flash-msg{
+    text-align: center;
+    font-size: 5vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.field1 {
+    padding-top: 16vh;
+}
+
+.allfields {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.allfields h3 {
+    width: 300px;
+    height: 6vh;
+    margin-top: 4.3vh;
+    border: solid white 2px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 300;
+    line-height: 55px;
+    background-color: #202022;
+}
+
+.field1 h2 {
+    padding-top: 1vh;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: 300;
+    padding-top: 4vh;
+    color: rgb(255, 255, 255);
+    padding-bottom: 1.7vh;
+}
+
+.allfields h3 a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #8df0fb;
+}
+
+.border {
+    margin: auto;
+    margin-top: 1vh;
+    width: 300px;
+    height: 26vh;
+    max-width: 90%;
+    border-radius: 1.5%;
+    background-color: #2a2829;
+}
+
+.form1 .email {
+    padding-top: 2vh;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+}
+
+.form1 .password {
+    padding-top: 1vh;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+}
+
+.texts {
+    width: 247px;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: #202022;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form1 #sub1 {
+    width: 260px;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: #238636;
+    font-family: 'Roboto', sans-serif;
+    border: 0px solid green;
+    border-radius: 4px;
+    font-size: 15px;
+    color: white;
+    margin-top: 1.7vh;
+}
+
+
+
+
+
+
+
+.copyright p {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
 }

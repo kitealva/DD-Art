@@ -17,6 +17,13 @@ def homepage():
     return render_template('home.html')
 
 
+@app.route('/create')
+def create_account():
+    """Create Account"""
+    
+    
+    return render_template('create.html')
+
 
 @app.route('/landing')
 def landing():
@@ -68,7 +75,7 @@ def process_login():
         flash("The email or password you entered was not valid.")
     else:
         session["user_email"] = user.email
-        flash(f"You're logged in as {user.email}!")
+        flash(f"Welcome {user.email}!")
 
     return redirect("/")
 
@@ -118,7 +125,7 @@ def create_cart_item(art_id):
         flash("Error: you didn't select a quantity.")
     else:
         user = crud.get_user_by_email(logged_in_email)
-        art = crud.get_item_by_id(art_id)
+        art = crud.get_art_by_id(art_id)
 
         cart_item = crud.create_cart_item(user.user_id, art.art_id, int(quantity_amount))
         db.session.add(cart_item)

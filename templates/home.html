@@ -1,57 +1,29 @@
 {% extends 'base.html' %}{% block title %}Homepage{% endblock %}
 
 {% block body %}
-
+<div class="field1">
+  <h2>Sign in to DD Art</h2>
 <div class="border">
 
-</div>
+  
+  <div class="allfields">
 
-<div class="allfields">
-  <div class="field1">
-  <h2>Create an Account</h2>
+      <form class="form1" action="/login" method="POST">
+        <p class="email">
+          Email address </br>
+          <input class="texts" type="text" name="email" placeholder="">
+        </p>
+        
+        <p class="password">
+          Password <input class="texts" type="password" name="password" placeholder="">
+        </p>
+        <p>
+          <button type="submit" placeholder="Login" class="sub" id="sub1">Sign In</button>
+        </p>
+      </form>
 
-  <form class="form1" action="/users" method="POST">
-    <p class="email">
-      Email <input class="texts" type="text" name="email" placeholder="Email address">
-    </p>
-
-    <p class="password">
-      Password <input class="texts" type="password" name="password" placeholder="Password">
-    </p>
-
-    <p>
-      <input type="submit" placeholder="Create" class="sub" id="sub1">
-    </p>
-  </form>
+      <h3> No account? <a href="/create">Create one here!</a></h3>
+    </div> 
   </div>
-
-
-  <div class="field2">
-  <h2>Log In</h2>
-
-  <form class="form2" action="/login" method="POST">
-    <p class="email">
-      Email <input class="texts" type="text" name="email" placeholder="Email address">
-    </p>
-
-    <p class="password">
-      Password <input class="texts" type="password" name="password" placeholder="Password">
-    </p>
-
-    <p>
-      <input type="submit" placeholder="Login" class="sub" id="sub2">
-    </p>
-  </form>
 </div>
-  <div class="field3">
-
-  <form class="form3" action="/logout" method="POST">
-    <p>
-      <input type="submit" value="Logout" class="sub" id="sub3">
-    </p>
-  </form>
-</div>
-
-
-</div>
-{% endblock %}
+  {% endblock %}
