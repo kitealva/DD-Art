@@ -43,23 +43,24 @@ def show_art(art_id):
     return render_template('art_info.html', art=art)
 
 
-@app.route("/users", methods=["POST"])
+@app.route("/users", methods=['GET', 'POST'])
 def register_user():
     """Create a new user."""
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        
+        if len(email) < 4:
+            flash('Email must be greater than 4 characters')
+            pass
+        elif len (password) < 4:
+            flash ('Password must be at least 4 characters')
+        else:
+            flash ('Account Created')
+            
+            
 
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-    user = crud.get_user_by_email(email)
-    if user:
-        flash("Cannot create an account with that email. Try again.")
-    else:
-        user = crud.create_user(email, password)
-        db.session.add(user)
-        db.session.commit()
-        flash("Account created! Please log in.")
-
-    return redirect("/")
+    return redirect("/create")
 
 
 @app.route("/login", methods=["GET","POST"])
@@ -71,7 +72,9 @@ def process_login():
 
 
     user = crud.get_user_by_email(email)
-    if not user or user.password != password:
+    if not user or password != password:
+        flash('No user')
+    elif password != password:
         flash("The email or password you entered was not valid.")
     else:
         session["user_email"] = user.email
