@@ -2,27 +2,26 @@
 {% block body %}
 
 <div class="page-header">
-  <h3>The Cart</h3>
+  <h3>Wishlist</h3>
 </div>
 
-<div class="cart_form">
-      {% for cart_art in cart_art %}
-      <h1 class="cart-object">
-          <img class="checkout_art" src="{{ cart_art.art.image_path }}">
+<div class="main_form">
+      {% for wishlist_art in wishlist_art %}
+      <h1 class="main-object">
+          <img class="main_art" src="{{ wishlist_art.art.image_path }}">
           <div class="block"></div>
             <div class="checkout-contents">
               <div class="art_piece">
-             <p>Art Piece <br>{{ cart_art.art.art_name }} </p>
+             <p>Art Piece <br>{{ wishlist_art.art.art_name }} </p>
               <div class="dot"></div>
               </div>
               <div class="art_price">
-             <p>Price <br> {{ cart_art.art.price }}</p> 
+             <p>Price <br> {{ wishlist_art.art.price }}</p> 
              <div class="dot"></div>
-              </div>
-              <div class="art_quantity">
-             <p>Quantity <br> {{ cart_art.quantity }}</p>
-             <div class="dot3"></div>
-             <form action="/carts/{{ cart_art.cart_id }}/delete" method="POST">
+             <div class="art_quantity">
+              <p>Quantity <br> {{ wishlist_art.quantity }}</p>
+               <div class="dot3"></div>
+             <form action="/wishlist/{{ wishlist_art.wishlist_id }}/delete" method="POST">
                <input class="remove" type="submit" value="Remove"/>
              </form>
               </div>

@@ -286,7 +286,7 @@ h1 {
     margin-top: 2vh;
     width: 6em;
     height: 3em;
-    font-size: 1em;
+    font-size: 20px;
     background-color: #2a2829;
     color: white;
     border-radius: 5px;
@@ -306,7 +306,7 @@ option {
     margin-bottom: 30px;
 }
 
-.cart_form {
+.main_form {
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -316,13 +316,24 @@ option {
     list-style-type: none;
 }
 
-.checkout_art {
+.form_box {
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    width: 400px;
+    margin-top: 33px;
+    font-size: 30px;
+}
+
+.main_art {
     width: 7em;
     height: 6em;
     border-radius: .2em;
 }
 
-.cart-object {
+.main-object {
     display: flex;
     justify-content: center;
     flex-direction: row;

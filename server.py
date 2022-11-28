@@ -158,6 +158,33 @@ def create_cart_item(art_id):
 
     return redirect(f"/landing")
 
+@app.route("/art/<art_id>/wishlist", methods=["GET","POST"])
+def create_wishlist_item(art_id):
+    """Create a new wishlist item."""
+
+    logged_in_email = session.get("user_email")
+    quantity_amount = request.form.get("quantity")
+    
+    if logged_in_email is None:
+        flash("Log in to update quantity!")
+    elif not quantity_amount:
+        flash("Error: you didn't select a quantity.")
+    else:
+        user = crud.get_user_by_email(logged_in_email)
+        art = crud.get_art_by_id(art_id)
+
+
+    user = crud.get_user_by_email(logged_in_email)
+    art = crud.get_art_by_id(art_id)
+
+    wishlist_item = crud.create_wishlist_art(user.user_id, art.art_id, int(quantity_amount))
+    db.session.add(wishlist_item)
+    db.session.commit()
+
+    flash(f" {art.art_name} has been added to your wishlist!")
+
+    return redirect(f"/landing")
+
 
 @app.post("/carts/<art_id>/delete")
 def delete_cart(art_id):
@@ -168,6 +195,17 @@ def delete_cart(art_id):
     flash(f" Art has been removed")
     
     return redirect("/cart")
+
+
+@app.post("/wishlist/<art_id>/delete")
+def delete_wishlist(art_id):
+    """Empty cart."""
+    
+    crud.delete_wishlist_art(art_id)
+    
+    flash(f" Art has been removed")
+    
+    return redirect("/wishlist")
 
 
 

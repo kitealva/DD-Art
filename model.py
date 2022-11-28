@@ -56,6 +56,7 @@ class Wishlist(db.Model):
     __tablename__ = 'wishlists'
     
     wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    quantity = db.Column(db.Integer)
     art_id = db.Column(db.Integer, db.ForeignKey('art.art_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     
@@ -64,7 +65,7 @@ class Wishlist(db.Model):
     
 
     def __repr__(self):
-        return f'<Wishlist wishlist_id={self.wishlist_id}'
+        return f'<Wishlist wishlist_id={self.wishlist_id} quantity={self.quantity} art_id={self.art_id} user_id={self.user_id}>'
     
     
 

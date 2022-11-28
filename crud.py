@@ -64,10 +64,11 @@ def delete_cart_item(art_id):
     db.session.commit()
     
 
-def create_wishlist_art(user_id, art_id):
+def create_wishlist_art(user_id, art_id, quantity):
     wishlist = Wishlist(
         user_id=user_id,
         art_id=art_id,
+        quantity=quantity,
     )
     return wishlist
 
