@@ -124,6 +124,17 @@ def cart():
     return render_template("cart.html", cart_art=cart_art)
 
 
+@app.route("/wishlist")
+def wishlist():
+    """Show art in wishlist."""
+    
+    get_user = crud.get_user_by_email(session.get("user_email"))
+    
+    wishlist_art = crud.get_wishlist_art_by_user_id(get_user.user_id)
+    
+    return render_template("wishlist.html", wishlist_art=wishlist_art)
+
+
 @app.route("/art/<art_id>/carts", methods=["GET","POST"])
 def create_cart_item(art_id):
     """Create a new cart item."""
@@ -153,7 +164,8 @@ def delete_cart(art_id):
     """Empty cart."""
     
     crud.delete_cart_item(art_id)
-    flash(f"Art has been removed")
+    
+    flash(f" Art has been removed")
     
     return redirect("/cart")
 

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}{% block title %}{{ art.art_name }} Art info {% endblock %}
 
 {% block body %}
+<div class="info_container">
 <div class="all_details">
 <div class="item-name">
   <h1>{{ art.art_name }}</h1>
 </div>
-<img class="img" src="{{ art.image_path }}">
+<img class="json" src="../{{ art.image_path }}">
 
 <div class="price">
   {{ art.price }}
@@ -38,7 +39,7 @@
 
 </div>
 </div>
-
+</div>
 {% endif %}
 
 {% endblock %}

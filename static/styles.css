@@ -61,7 +61,7 @@ li a {
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .contents {
@@ -79,6 +79,7 @@ h1 {
     font-weight: bold;
     color: #ffffff;
     font-size: 50px;
+    padding-top: 10px;
 }
 
 .flash-msg{
@@ -230,18 +231,26 @@ h1 {
     margin-top: 5.8vh;
 }
 
+.info_container {
+    background-color: #202022;
+    margin-left: 37%;
+    margin-right: 37%;
+    padding-bottom: 30px;
+    
+}
+
 .all_details h1 {
-    padding-bottom: 7vh;
+    padding-bottom: 4.5vh;
     font-size: 6em;
 }
 
-.img {
+.json {
     width: 400px;
-    height: 300px;
+    height: 370px;
+    border-radius: 4px;
 }
 
 .price {
-    
     font-size: 3em;
     margin-top: 2vh;
 }
@@ -258,13 +267,13 @@ h1 {
 .amount-field {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    width: 4em;
+    width: 5em;
+    height: 2.3em;
     text-align: center;
     background-color: #2a2829;
     border-radius: 5px;
     border: solid black 2px;
     color: rgb(255, 255, 255);
-    
 }
 
 .quant-form {
@@ -276,7 +285,7 @@ h1 {
     font-weight: 300;
     margin-top: 2vh;
     width: 6em;
-    height: 2em;
+    height: 3em;
     font-size: 1em;
     background-color: #2a2829;
     color: white;
@@ -353,7 +362,17 @@ option {
     height: 1px;
     background:  #202022;
     margin-right: 200px;
+}
 
+.remove {
+    background-color: #202022;
+    margin-bottom: 15px;
+    width: 90px;
+    height: 30px;
+    border-radius: 3px;
+    border: solid rgb(0, 0, 0) 2px;
+    color: white;
+    font-size: 20px;
 }
 
 .checkout-contents p {
