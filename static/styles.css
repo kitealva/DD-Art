@@ -50,8 +50,7 @@ li a {
     flex-wrap: wrap;
     flex-direction: row;
     padding: 1.2vw;
-    border-radius: 9%;
-    
+    border-radius: 9%;  
 }
 
 .row {
@@ -63,6 +62,7 @@ li a {
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 5%;
+    list-style-type: none;
 }
 
 .contents {
@@ -218,6 +218,61 @@ h1 {
     font-family: 'Roboto', sans-serif;
     color: #8df0fb;
 }
+
+.all_details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5.8vh;
+}
+
+.all_details h1 {
+    padding-bottom: 7vh;
+    font-size: 6em;
+}
+
+.img {
+    width: 400px;
+    height: 300px;
+}
+
+.price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    margin-top: 2vh;
+}
+
+.item-descrip {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    margin-top: 2vh;
+}
+
+.all_details p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.amount-field {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.submit {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-top: 2vh;
+    width: 8em;
+    height: 3.5em;
+    font-size: 1em;
+}
+
+
+
 
 
 

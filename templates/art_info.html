@@ -1,8 +1,8 @@
-{% extends 'base.html' %}{% block title %}{{ art.art_name }} Art info{% endblock %}
+{% extends 'base.html' %}{% block title %}{{ art.art_name }} Art info {% endblock %}
 
 {% block body %}
 <div class="all_details">
-<div class="art-name">
+<div class="item-name">
   <h1>{{ art.art_name }}</h1>
 </div>
 <img class="img" src="{{ art.image_path }}">
@@ -11,9 +11,9 @@
   {{ art.price }}
 </div>
 
-<div class="description">
-<div class="details-part"><p> Art description : <br></div>
-  <div class="art-description"> {{ art.description }} </div>
+<div class="descrip">
+
+  <div class="item-descrip"> {{ art.description }} </div>
 </p>
 </div>
 
@@ -23,7 +23,7 @@
 <form action="/art/{{ art.art_id }}/carts" method="POST">
   <div class="quant-form">
   <p>
-    Qty* <br>
+    Qty <br>
     <select name="quantity" class="amount-field">
       <option value=""></option>
       {% for num in range(1,11) %}

@@ -1,2 +1,29 @@
-{% extends 'base.html' %}{% block title %}Homepage{% endblock %}
+{% extends 'base.html' %} {% block title %}Cart{% endblock %}
 {% block body %}
+
+<div class="page-header">
+  <p>Shopping Cart</p>
+  </div>
+
+<div>
+    <ul class="cart_row">
+      {% for cart_art in cart_art %}
+      <li>
+        <a href="/art/{{ cart_art.art.art_id }}">
+          <img class="checkout_images" src="{{ cart_art.art.image_path }}">
+            <div class="checkout-contents">
+            <div class="item-name3"> Item <br><br> {{ cart_art.art.art_name }}</div> <div class="cart-price"> Price <br><br> {{ cart_art.art.price }}</div> 
+            <div class="cart-quant"> Quantity <br><br> {{ cart_art.quantity }} </div>
+          </div>
+        </a>
+        <form action="/carts/{{ cart_art.cart_id }}/delete" method="POST">
+          <input class="remove" type="submit" value="Remove"/>
+        </form>
+
+      </li>
+      {% endfor %}
+    </ul>
+    
+  </div>
+    
+  {% endblock %}

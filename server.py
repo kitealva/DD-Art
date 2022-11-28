@@ -21,6 +21,7 @@ def homepage():
 def create_account():
     """Create Account"""
     
+        
     
     return render_template('create.html')
 
@@ -46,9 +47,13 @@ def show_art(art_id):
 @app.route("/users", methods=['GET', 'POST'])
 def register_user():
     """Create a new user."""
+    
+
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
+        
+        user = crud.get_user_by_email(email)
         
         if len(email) < 4:
             flash('Email must be greater than 4 characters')
@@ -56,6 +61,9 @@ def register_user():
         elif len (password) < 4:
             flash ('Password must be at least 4 characters')
         else:
+            user = crud.create_user(email, password)
+            db.session.add(user)
+            db.session.commit()
             flash ('Account Created')
             
             
@@ -66,13 +74,12 @@ def register_user():
 @app.route("/login", methods=["GET","POST"])
 def process_login():
     """Process user login."""
-
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-
+    
+    email = request.form.get('email')
+    password = request.form.get('password')
+        
     user = crud.get_user_by_email(email)
-    if not user or password != password:
+    if not user or user.password != password:
         flash('No user')
     elif password != password:
         flash("The email or password you entered was not valid.")
@@ -81,6 +88,8 @@ def process_login():
         flash(f"Welcome {user.email}!")
 
     return redirect("/")
+#test /landing later with a logout redirect
+
 
 @app.route("/logout", methods=["POST"])
 def process_logout():
@@ -95,6 +104,7 @@ def process_logout():
 
     return redirect("/")
 
+
 @app.route("/update_quantity", methods=["POST"])
 def update_quantity():
     quantity_id = request.json["quantity_id"]
@@ -104,16 +114,17 @@ def update_quantity():
 
     return "Quantity Updated"
 
+
 @app.route("/cart")
 def cart():
     """Show art in cart."""
-    
     
     get_user = crud.get_user_by_email(session.get("user_email"))
     
     cart_art = crud.get_cart_art_by_user_id(get_user.user_id)
     
     return render_template("cart.html", cart_art=cart_art)
+
 
 @app.route("/art/<art_id>/carts", methods=["GET","POST"])
 def create_cart_item(art_id):
@@ -130,13 +141,14 @@ def create_cart_item(art_id):
         user = crud.get_user_by_email(logged_in_email)
         art = crud.get_art_by_id(art_id)
 
-        cart_item = crud.create_cart_item(user.user_id, art.art_id, int(quantity_amount))
+        cart_item = crud.create_cart_art(user.user_id, art.art_id, int(quantity_amount))
         db.session.add(cart_item)
         db.session.commit()
 
         flash(f" {art.art_name} have been added to your cart.")
 
-    return redirect(f"/art")
+    return redirect(f"/landing")
+
 
 @app.post("/carts/<art_id>/delete")
 def delete_cart(art_id):

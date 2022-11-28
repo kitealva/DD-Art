@@ -2,56 +2,56 @@
     {
         "art_name": "Abstraction",
         "image_path": "static/images/deven-beauty.jpg",
-        "description": "test1",
+        "description": "Trapped in Polyverse",
         "price": "$79.99"
     },
 
     {
         "art_name": "Gorrhino",
         "image_path": "static/images/deven-blue-red.jpg",
-        "description": "test2",
+        "description": "Animalistic",
         "price": "$49.99"
     },
 
     {
         "art_name": "Beauty",
         "image_path": "static/images/deven-create.jpg",
-        "description": "test3",
+        "description": "Hot Mess",
         "price": "$50.99"
     },
     
     {
         "art_name": "G.O.A.T",
         "image_path": "static/images/deven-goat.jpg",
-        "description": "test4",
+        "description": "The Goat",
         "price": "$99.99"
     },
 
     {
         "art_name": "King",
         "image_path": "static/images/deven-gorilla.jpg",
-        "description": "test5",
+        "description": "King of the Jungle",
         "price": "$19.99"
     },
 
     {
         "art_name": "Journey's Beginning",
         "image_path": "static/images/deven-lady.jpg",
-        "description": "test5",
+        "description": "Adventure Time",
         "price": "$109.99"
     },
 
     {
         "art_name": "The Sister",
         "image_path": "static/images/deven-sister.jpg",
-        "description": "test6",
+        "description": "My Sister",
         "price": "$89.99"
     },
 
     {
         "art_name": "Venom",
         "image_path": "static/images/deven-venom.jpg",
-        "description": "test7",
+        "description": "It's Venom",
         "price": "$119.99"
     }
 
