@@ -14,7 +14,7 @@
 <div class="descrip">
 
   <div class="item-descrip"> {{ art.description }} </div>
-</p>
+
 </div>
 
 {% if session.get('user_email') %}
@@ -23,7 +23,7 @@
 <form action="/art/{{ art.art_id }}/carts" method="POST">
   <div class="quant-form">
   <p>
-    Qty <br>
+    Quantity <br>
     <select name="quantity" class="amount-field">
       <option value=""></option>
       {% for num in range(1,11) %}
@@ -31,8 +31,8 @@
       {% endfor %}
     </select>
   </p>
-</div>
-  <p><input class="submit" type="Submit" value="Add to Cart"  /></p>
+  </div>
+  <input class="submit" type="Submit" value="Add to Cart"/></p>
 </form>
 </div>
 

@@ -64,7 +64,7 @@ def register_user():
             user = crud.create_user(email, password)
             db.session.add(user)
             db.session.commit()
-            flash ('Account Created')
+            flash ('Account Creation Successful!')
             
             
 
@@ -80,9 +80,7 @@ def process_login():
         
     user = crud.get_user_by_email(email)
     if not user or user.password != password:
-        flash('No user')
-    elif password != password:
-        flash("The email or password you entered was not valid.")
+        flash("The email or password you entered was incorrect")
     else:
         session["user_email"] = user.email
         flash(f"Welcome {user.email}!")
@@ -145,7 +143,7 @@ def create_cart_item(art_id):
         db.session.add(cart_item)
         db.session.commit()
 
-        flash(f" {art.art_name} have been added to your cart.")
+        flash(f" {art.art_name} has been added to your cart!")
 
     return redirect(f"/landing")
 
@@ -154,9 +152,9 @@ def create_cart_item(art_id):
 def delete_cart(art_id):
     """Empty cart."""
     
-    
     crud.delete_cart_item(art_id)
-    flash(f"Item has been removed.")
+    flash(f"Art has been removed")
+    
     return redirect("/cart")
 
 
