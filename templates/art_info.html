@@ -2,9 +2,13 @@
 
 {% block body %}
 <div class="info_container">
-<div class="all_details">
-<div class="item-name">
-  <h1>{{ art.art_name }}</h1>
+  <div class="all_details">
+    <div class="item-name">
+      <h1>{{ art.art_name }}
+      <form action="/art/{{ art.art_id }}/wishlist" method="POST">
+      <button class="heart"><i class="fa-solid fa-heart"></i></button>
+      </form>
+    </h1>
 </div>
 <img class="json" src="../{{ art.image_path }}">
 
@@ -22,7 +26,6 @@
 
 <div class="quantity">
   <form action="/art/{{ art.art_id }}/carts" method="POST">
-    <form action="/art/{{ art.art_id }}/wishlist" method="POST">
     <div class="quant-form">
       <p>
         Quantity <br>
@@ -33,12 +36,12 @@
           {% endfor %}
         </select>
       </p>
-      <div class="form_box"></div>
-    </form>
-  </form>
-        <input class="submit" type="Submit" value="Add to Cart"/>
-        <input class="submit" type="Submit" value="Add to Wishlist"/>
-    </div>
+      <div class="form_box">
+        <input class="submit" type="Submit" value="Add to Cart"/></p>
+      </form>
+
+      
+</div>
 </div>
 
 </div>

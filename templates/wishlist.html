@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}Cart{% endblock %}
+{% extends 'base.html' %} {% block title %}Wishlist{% endblock %}
 {% block body %}
 
 <div class="page-header">
@@ -17,10 +17,7 @@
               </div>
               <div class="art_price">
              <p>Price <br> {{ wishlist_art.art.price }}</p> 
-             <div class="dot"></div>
-             <div class="art_quantity">
-              <p>Quantity <br> {{ wishlist_art.quantity }}</p>
-               <div class="dot3"></div>
+             <div class="dot3"></div>
              <form action="/wishlist/{{ wishlist_art.wishlist_id }}/delete" method="POST">
                <input class="remove" type="submit" value="Remove"/>
              </form>

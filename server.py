@@ -66,9 +66,7 @@ def register_user():
             db.session.commit()
             flash ('Account Creation Successful!')
             
-            
-
-    return redirect("/create")
+    return redirect("/")
 
 
 @app.route("/login", methods=["GET","POST"])
@@ -81,25 +79,20 @@ def process_login():
     user = crud.get_user_by_email(email)
     if not user or user.password != password:
         flash("The email or password you entered was incorrect")
+        return redirect('/')    
     else:
         session["user_email"] = user.email
         flash(f"Welcome {user.email}!")
 
-    return redirect("/")
-#test /landing later with a logout redirect
+    return redirect("/landing")
 
 
-@app.route("/logout", methods=["POST"])
+@app.route("/logout")
 def process_logout():
     """Process user logout."""
 
-    logged_in_to_email = session.get("user_email")
-    if logged_in_to_email is None:
-        flash("You were already logged out!")
-    else:
-        del session["user_email"]
-        flash("You're logged out!")
-
+    del session["user_email"]
+    flash("Logged Out")
     return redirect("/")
 
 
@@ -163,21 +156,11 @@ def create_wishlist_item(art_id):
     """Create a new wishlist item."""
 
     logged_in_email = session.get("user_email")
-    quantity_amount = request.form.get("quantity")
     
-    if logged_in_email is None:
-        flash("Log in to update quantity!")
-    elif not quantity_amount:
-        flash("Error: you didn't select a quantity.")
-    else:
-        user = crud.get_user_by_email(logged_in_email)
-        art = crud.get_art_by_id(art_id)
-
-
     user = crud.get_user_by_email(logged_in_email)
     art = crud.get_art_by_id(art_id)
 
-    wishlist_item = crud.create_wishlist_art(user.user_id, art.art_id, int(quantity_amount))
+    wishlist_item = crud.create_wishlist_art(user.user_id, art.art_id)
     db.session.add(wishlist_item)
     db.session.commit()
 
@@ -192,7 +175,7 @@ def delete_cart(art_id):
     
     crud.delete_cart_item(art_id)
     
-    flash(f" Art has been removed")
+    flash(f" Art has been removed from cart")
     
     return redirect("/cart")
 
@@ -203,7 +186,7 @@ def delete_wishlist(art_id):
     
     crud.delete_wishlist_art(art_id)
     
-    flash(f" Art has been removed")
+    flash(f" Art has been removed from wishlist")
     
     return redirect("/wishlist")
 

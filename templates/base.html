@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>{%block title%}{% endblock %}</title>
 </head>
@@ -18,9 +19,13 @@
     {% block head%}
     <div class="navbar">
         <ul>
-            <li class="nav3"><a href="/cart">Cart</a></li>
-            <li class="nav4"><a href="/wishlist">Wishlist</a></li>
-            <li class="nav2"><a href="/login">Login</a></li>
+            <li class="nav3"><a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li class="nav4"><a href="/wishlist"><i class="fa-regular fa-heart"></i></a></li>
+            <li>{% if 'user_email' in session %}
+                <a class="nav2" href="/logout">Log out</a>
+                {% else %}
+                <a class="nav2" href="/login">Log in</a>
+                {% endif %}</li>
             <li class="nav1"><a href="/landing">Home</a></li>
         </ul>
     </div>
