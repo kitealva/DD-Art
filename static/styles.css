@@ -23,8 +23,7 @@ li a {
     overflow: auto;
     background-color: black;
     border-radius: 0px 0 10px 10px;
-    height: 83px;
-    padding-top: 10px;
+    height: 63px;
 }
 
 .navbar li{
@@ -37,13 +36,16 @@ li a {
     padding: 3px 3px;
     text-decoration: none;
     color: white;
-    font-size: 40px;
-    padding-right: 20px;
+    font-size: 30px;
     margin-right: 30px;
 }
 
+.navbar li a i {
+    font-size: 25px;
+}
+
 .navbar li a:hover{
-    color: rgb(112, 218, 18)
+    color: rgb(0, 235, 227)
 }
 
 .images {
@@ -263,6 +265,7 @@ h1 {
     border-radius: 5px;
     border: solid black 2px;
     color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 .quant-form {
@@ -275,10 +278,21 @@ h1 {
     margin-top: 2vh;
     width: 6em;
     height: 3em;
-    font-size: 20px;
+    font-size: 21px;
     background-color: #2a2829;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(0, 0, 0);
+    transform: translateY(-1px);
+    color: rgb(255, 255, 255);
+}
+
+.submit:active {
+    transform: translateY(1px);
 }
 
 option {
@@ -309,8 +323,19 @@ option {
     font-size: 60px;
     background-color:  #202022;
     border: none;
-    color: rgb(228, 2, 2);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
+
+.heart:hover {
+    color: red;
+    transform: translateY(-1px);
+}
+
+.heart:active {
+    transform: translateY(2px);
+}
+
 
 .form_box {
     display: flex;
@@ -380,6 +405,16 @@ option {
     border: solid rgb(0, 0, 0) 2px;
     color: white;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.remove:hover {
+    background-color: rgb(0, 0, 0);
+    transform: translateY(-1px);
+}
+
+.remove:active{
+    transform: translateY(1px);
 }
 
 .checkout-contents p {
