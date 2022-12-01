@@ -19,19 +19,18 @@
     {% block head%}
     <div class="navbar">
         <ul>
-            <li class="nav3"><a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li class="nav4"><a href="/wishlist"><i class="fa-regular fa-heart"></i></a></li>
             <li>{% if 'user_email' in session %}
-                <a class="nav2" href="/logout">Log out</a>
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                 {% else %}
-                <a class="nav2" href="/login">Log in</a>
+                <a href="/login"><i class="fa-solid fa-right-to-bracket"></i></a>
                 {% endif %}</li>
-            <li class="nav1"><a href="/landing">Home</a></li>
+                <li><a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="/wishlist"><i class="fa-regular fa-heart"></i></a></li>
+            <li class="nav1"><a href="/landing"><i class="fa-solid fa-house"></i></a></li>
         </ul>
     </div>
     {% endblock %}
     <main class="margin-top">
-        <i class="devicon-adonisjs-original"></i>
         {% for msg in get_flashed_messages() %}
         <p class="flash-msg">
           {{ msg }}

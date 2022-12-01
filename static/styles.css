@@ -19,6 +19,20 @@ li a {
     text-decoration: none;
 }
 
+.navbar {
+    transition: ease-in-out .25;
+}
+
+.navbar a:hover {
+    transition: ease-in-out .4s;
+    color: #ffffff;
+    border: #000000 2px solid;
+    background-color: #000000;
+    border-radius: 10%;
+    padding: 10px;
+
+}
+
 .navbar ul{
     overflow: auto;
     background-color: black;
@@ -41,11 +55,11 @@ li a {
 }
 
 .navbar li a i {
-    font-size: 25px;
+    font-size: 21px;
 }
 
 .navbar li a:hover{
-    color: rgb(0, 235, 227)
+    color: rgb(255, 255, 255)
 }
 
 .images {
@@ -68,6 +82,15 @@ li a {
     flex-wrap: wrap;
     list-style-type: none;
     padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row li:hover {
+    transition: ease-in .25s;
+    color: #202022;
+    border: #ffffff 3px solid;
+    border-radius: 5%;
+    font-size: 30px;
 }
 
 .contents {
@@ -78,6 +101,7 @@ li a {
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
+    margin-bottom: 30px
 }
 
 h1 {
@@ -93,7 +117,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5vh;
+    font-size: 2.3vh;
     font-family: 'Roboto', sans-serif;
     background-color: #2a2829;
     border-radius: 0px 0 10px 10px;
@@ -225,9 +249,7 @@ h1 {
     background-color: #202022;
     margin-left: 37%;
     margin-right: 37%;
-    padding-bottom: 30px;
-
-    
+    padding-bottom: 30px;  
 }
 
 .all_details h1 {
@@ -287,7 +309,7 @@ h1 {
 
 .submit:hover {
     background-color: rgb(0, 0, 0);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     color: rgb(255, 255, 255);
 }
 
@@ -329,11 +351,11 @@ option {
 
 .heart:hover {
     color: red;
-    transform: translateY(-1px);
+    transform: translateY(3px);
 }
 
 .heart:active {
-    transform: translateY(2px);
+    transform: translateY(-2px);
 }
 
 
@@ -397,7 +419,7 @@ option {
 }
 
 .remove {
-    background-color: #202022;
+    background-color: #222020;
     margin-bottom: 15px;
     width: 90px;
     height: 30px;
@@ -409,8 +431,9 @@ option {
 }
 
 .remove:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(227, 22, 22);
     transform: translateY(-1px);
+    border: none;
 }
 
 .remove:active{
@@ -419,4 +442,53 @@ option {
 
 .checkout-contents p {
     line-height: 1.9em;
+}
+
+.remove-add {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.add {
+    background-color: #202022;
+    margin-bottom: 15px;
+    width: 90px;
+    height: 30px;
+    border-radius: 3px;
+    border: solid rgb(0, 0, 0) 2px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: rgb(81, 255, 0);
+    transform: translateY(-1px);
+    border: none;
+}
+
+.green-go {
+    display: flex;
+    justify-content: center;
+    background-color: #202022;
+    margin-right: 45%;
+    margin-left: 45%;
+    margin-top: 22px;
+    border-radius: 10px;
+    border: solid rgb(255, 255, 255) 2px;
+    padding-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+    color: white;
+}
+
+.green-go:hover{
+    background-color: #47ea3b;
+    transform: translateY(2px);
+    cursor: pointer;
+}
+
+.green-go:active {
+    transform: translateY(-1px);
 }

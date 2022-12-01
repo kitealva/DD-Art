@@ -55,11 +55,12 @@ def register_user():
         
         user = crud.get_user_by_email(email)
         
-        if len(email) < 4:
-            flash('Email must be greater than 4 characters')
-            pass
+        if len(email) < 10:
+            flash('Email must be greater than 10 characters')
+            return redirect('/create')
         elif len (password) < 4:
             flash ('Password must be at least 4 characters')
+            return redirect('/create')
         else:
             user = crud.create_user(email, password)
             db.session.add(user)
@@ -90,9 +91,10 @@ def process_login():
 @app.route("/logout")
 def process_logout():
     """Process user logout."""
-
+    
     del session["user_email"]
-    flash("Logged Out")
+    flash(f"Welcome! Please sign in or create an account!")
+    
     return redirect("/")
 
 
@@ -138,7 +140,7 @@ def create_cart_item(art_id):
     if logged_in_email is None:
         flash("Log in to update quantity!")
     elif not quantity_amount:
-        flash("Error: you didn't select a quantity.")
+        flash("Please select a quantity.")
     else:
         user = crud.get_user_by_email(logged_in_email)
         art = crud.get_art_by_id(art_id)
